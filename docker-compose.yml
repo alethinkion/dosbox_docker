@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  dosbox:
+    container_name: 'nginx'
+    build: './_config'
+    ports:
+      - "5901:5901"
+    volumes:
+      - ./_config/_debug:/dos/drive_c
+      - ./_scripts:/dos/drive_d
+    environment:
+      VNCPASSWORD: "hola"
